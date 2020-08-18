@@ -1,30 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💻 My NextJS App
 
-## Getting Started
+## 📝 Características
 
-First, run the development server:
+- Utilizando el framework NextJS
+- Codificado en TypeScript
+- Linter ESLint
+- Formateo con Prettier
+
+## Añadir soporte para TypeScript
+
+### 1. Crear proyecto
 
 ```bash
-npm run dev
-# or
+yarn create next-app
+```
+
+### 2. Añadir TypeScript a NextJS
+
+Deberemos cambiar la extensión de los ficheros de .js a .tsx
+
+**\_app.tsx**
+Puedes ver un ejemplo de este archivo en la [documentación](https://nextjs.org/docs/basic-features/typescript#custom-app)
+
+**index.tsx**
+Puedes encontrar un ejemplo [aquí](pages/index.tsx)
+
+### 3. Arrancar el proyecto en modo desarrollo
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Una vez ejecutado el comando, no nos dejará arrancar el proyecto y nos devolverá un error mencionando que deberemos añadir las dependencias relacionadas con TypeScript:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+yarn add --dev typescript @types/react @types/node
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Una vez realizado esto, arrancamos el proyecto de nuevo con `yarn dev`.
+NextJS detectará que estamos usando TypeScript y nos creará automáticamente los archivos [tsconfig.json](tsconfig.json) y [next-env.d.ts](next-env.d.ts).
+Puedes leer más en la [documentación](https://nextjs.org/docs/advanced-features/module-path-aliases)
